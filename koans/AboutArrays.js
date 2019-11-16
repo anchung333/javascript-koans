@@ -40,7 +40,7 @@ describe("About Arrays", function() {
     expect(tenEmptyElementArray.length).toBe(10);
 
     tenEmptyElementArray.length = 5;
-    expect(tenEmptyElementArray.length).toBe(undefined);
+    expect(tenEmptyElementArray.length).toBe(5);
   });
 
   it("should slice arrays", function() {
@@ -66,7 +66,7 @@ describe("About Arrays", function() {
 
     var assignedArray = array;
     assignedArray[5] = "changed in assignedArray";
-    expect(array[5]).toBe("five");
+    expect(array[5]).toBe("changed in assignedArray");
 
     var copyOfArray = array.slice();
     copyOfArray[3] = "changed in copyOfArray";
@@ -91,7 +91,7 @@ describe("About Arrays", function() {
     expect(array).toEqual([3,1,2]);
     
     var shiftedValue = array.shift();
-    expect(shiftedValue).toEqual([3]);
+    expect(shiftedValue).toEqual(3);
     expect(array).toEqual([1,2]);
   });  
 });
